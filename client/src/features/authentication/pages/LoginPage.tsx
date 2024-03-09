@@ -30,12 +30,12 @@ export function LoginForm() {
         email: string;
         password: string;
     }) => {
-       await  login(data.email, data.password).catch((error) => {
+        await login(data.email, data.password).catch((error) => {
             if (
                 error instanceof AxiosError &&
                 error.response?.data?.message != null
             ) {
-                form.setError("root", { message: error.response.data.message })
+                form.setError("root", {message: error.response.data.message})
             }
         })
 
@@ -44,59 +44,59 @@ export function LoginForm() {
     return (
 
         <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    <Card className='w-[400px]'>
-                        <CardHeader>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <Card className='w-[400px]'>
+                    <CardHeader>
                         <CardTitle>Login</CardTitle>
-                            {
-                                form.formState.errors?.root ? (
-                                    <CardDescription className="text-red-500 dark:text-red-700">
-                                        {form.formState.errors.root?.message}
-                                    </CardDescription>
-                                ) : null
-                            }
-                        </CardHeader>
-                        <CardContent className="flex flex-col w-full gap-4">
-                    <div className="grid gap-4 grid-cols-1">
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input type="email" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="password"
-                            render={({field}) => (
-                                <FormItem>
-                                    <FormLabel>Password</FormLabel>
-                                    <FormControl>
-                                        <Input type='password' {...field} />
-                                    </FormControl>
-                                    <FormMessage/>
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-                        </CardContent>
-                        <CardFooter className="flex gap-2 justify-end">
-                                <Button type="button" variant='ghost'>Cancel</Button>
-                                <Button type="button" variant='outline' asChild>
-                                    <Link to="/signup">Sign up</Link>
-                                </Button>
-                                <Button type="submit" disabled={!form.formState.isValid || form.formState.isSubmitting}>
-                                    {form.formState.isSubmitting ? <LoadingSpinner/> : "Log in"}
-                                        </Button>
-                        </CardFooter>
-                    </Card>
-                </form>
+                        {
+                            form.formState.errors?.root ? (
+                                <CardDescription className="text-red-500 dark:text-red-700">
+                                    {form.formState.errors.root?.message}
+                                </CardDescription>
+                            ) : null
+                        }
+                    </CardHeader>
+                    <CardContent className="flex flex-col w-full gap-4">
+                        <div className="grid gap-4 grid-cols-1">
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({field}) => (
+                                    <FormItem>
+                                        <FormLabel>Email</FormLabel>
+                                        <FormControl>
+                                            <Input type="email" {...field} />
+                                        </FormControl>
+                                        <FormMessage/>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="password"
+                                render={({field}) => (
+                                    <FormItem>
+                                        <FormLabel>Password</FormLabel>
+                                        <FormControl>
+                                            <Input type='password' {...field} />
+                                        </FormControl>
+                                        <FormMessage/>
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                    </CardContent>
+                    <CardFooter className="flex gap-2 justify-end">
+                        <Button type="button" variant='ghost'>Cancel</Button>
+                        <Button type="button" variant='outline' asChild>
+                            <Link to="/signup">Sign up</Link>
+                        </Button>
+                        <Button type="submit" disabled={!form.formState.isValid || form.formState.isSubmitting}>
+                            {form.formState.isSubmitting ? <LoadingSpinner/> : "Log in"}
+                        </Button>
+                    </CardFooter>
+                </Card>
+            </form>
         </Form>
     )
 }

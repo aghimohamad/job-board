@@ -40,7 +40,7 @@ const Navbar = () => {
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent align="end">
                                         <DropdownMenuItem asChild>
-                                            <Link to='/jobs/mylistings'
+                                            <Link to='/jobs'
                                                   className="text-slate-900 cursor-pointer dark:text-slate-50 font-medium text-md hover:text-slate-800 dark:hover:text-slate-100">My
                                                 listings</Link>
                                         </DropdownMenuItem>

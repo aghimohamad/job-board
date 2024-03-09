@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../after/.idea/after.iml" filepath="$PROJECT_DIR$/../after/.idea/after.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/job-tasks-board.iml" filepath="$PROJECT_DIR$/.idea/job-tasks-board.iml" />
     </modules>
   </component>

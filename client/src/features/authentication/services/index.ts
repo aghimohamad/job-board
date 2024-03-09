@@ -1,27 +1,28 @@
 import baseApi from "@/services/baseApi.ts";
+import {User} from "@/features/authentication/contexts/AuthProvider.tsx";
 
-export const signup = async (email: string, password: string) => {
-    const response = await baseApi.post("/users/signup", {
+export const signup =  (email: string, password: string) => {
+    const response =  baseApi.post("/users/signup", {
         email,
         password,
-    })
-    return response.data
+    }).then(res => res.data)
+    return response
 }
 
-export const login = async (email: string, password: string) => {
-    const response = await baseApi.post("/users/login", {
+export const login =  (email: string, password: string) => {
+    const response =  baseApi.post("/users/login", {
         email,
         password,
-    })
-    return response.data
+    }).then(res => res.data)
+    return response
 }
 
-export const currentUser = async () => {
-    const response = await baseApi.get("/users/session")
-    return response.data
+export const currentUser =  () => {
+   return  baseApi.get<User | undefined>("/users/session")
+        .then(res => res.data )
 }
 
-export const logout = async () => {
-    const response = await baseApi.delete("/users/logout")
-    return response.data
+export const logout =  () => {
+    const response =  baseApi.delete("/users/logout").then(res => res.data)
+    return response
 }
