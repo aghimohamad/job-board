@@ -4,11 +4,20 @@ import {jobListingFormSchema} from "@backend/constants/schemas/jobListings.ts";
 import {jobListingSchema} from "@/features/job-listings/constants/schemas.ts";
 import {JOB_LISTING_DURATIONS} from "@backend/constants/types.ts";
 
+export const getPublicJobListings = () => {
+    return baseApi
+        .get("/job-listings/published")
+        .then(res => z.array(jobListingSchema).parseAsync(res.data))
+}
+
+
 export const getJobListings = () => {
     return baseApi
         .get("/job-listings/my-listings")
         .then(res => z.array(jobListingSchema).parseAsync(res.data))
 }
+
+
 type AddJobListingValues = z.infer<typeof jobListingFormSchema>
 export const addJobListing = (data: AddJobListingValues) => {
     return baseApi

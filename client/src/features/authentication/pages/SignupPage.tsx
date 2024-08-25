@@ -20,11 +20,13 @@ message: "Passwords do not match",
 path: ["confirm"],
 })
 
-
 export function SignupForm() {
     const form = useForm<SignupFormValues>({
         resolver: zodResolver(formSchema),
     })
+
+    console.log(form.formState.isValid);
+
 
     const {signup} = useAuth()
 

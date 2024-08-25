@@ -3,7 +3,7 @@ import {cn} from "@/utils/shadcnUtils.ts";
 
 type  ListingsGridProps = ComponentProps<"div">
 
-const ListingsGrid = ({className , ...props} : ListingsGridProps) => {
+export const ListingsGrid = ({className , ...props} : ListingsGridProps) => {
     return (
         <div
         className={cn(
@@ -15,5 +15,3 @@ const ListingsGrid = ({className , ...props} : ListingsGridProps) => {
         </div>
     );
 };
-
-export default ListingsGrid;

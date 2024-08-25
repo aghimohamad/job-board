@@ -17,9 +17,7 @@ import {Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVal
 import {JOB_LISTING_EXPERIENCE_LEVELS, JOB_LISTING_TYPES} from "@backend/constants/types.ts";
 import {Button} from "@/components/ui/button.tsx";
 import * as React from "react";
-import ListingsGrid from "@/features/job-listings/components/listingsGrid.tsx";
-import ListingCard from "@/features/job-listings/components/listingCard.tsx";
-import {FullJobListingDialog} from "@/features/job-listings";
+import {ListingsGrid,ListingCard,FullJobListingDialog} from "@/features/job-listings";
 import {LoadingSpinner} from "@/components/ui/LoadingSpinner.tsx";
 
 type JobListingValues = z.infer<typeof jobListingFormSchema>

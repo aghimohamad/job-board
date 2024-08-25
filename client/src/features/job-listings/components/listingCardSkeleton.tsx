@@ -2,7 +2,7 @@ import{ Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Banknote, CalendarDays, GraduationCap } from "lucide-react"
-import ListingsGrid from "@/features/job-listings/components/listingsGrid.tsx";
+import {ListingsGrid} from "@/features/job-listings";
 
     export function JobListingSkeletonCard() {
     return (

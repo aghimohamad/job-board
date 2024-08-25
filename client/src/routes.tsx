@@ -8,6 +8,8 @@ import {AuthLayout, LoginForm, SignupForm} from "@/features/authentication";
 import  {MyListingsRoute} from "@/pages/jobs/my-listings";
 import NewListingPage from "@/pages/jobs/newListingPage.tsx";
 import {editListingRoute} from "@/pages/jobs/editListingPage";
+import { orderCompleteRoute } from "./pages/jobs/order-complete"
+import { PublicListingsRoute } from "./pages/jobs/index"
 
 export const routes: RouteObject[] = [
     {
@@ -31,9 +33,11 @@ export const routes: RouteObject[] = [
                     {
                         path: "jobs",
                         children: [
-                            {index: true, ...MyListingsRoute},
-                            {path: "new", element: <NewListingPage/>},
-                            {path: ":id/edit" , ...editListingRoute},
+                            { path: 'my-listings', ...MyListingsRoute },
+                            { path: "new", element: <NewListingPage /> },
+                            { path: ":id/edit", ...editListingRoute },
+                            { path: "order-complete", ...orderCompleteRoute },
+                            { index:true, ...PublicListingsRoute },
                         ],
                     },
                     {

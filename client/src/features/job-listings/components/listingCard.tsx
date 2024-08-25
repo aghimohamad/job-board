@@ -5,14 +5,14 @@ import {Banknote, CalendarDays, GraduationCap} from "lucide-react";
 import {formatCurrency} from "@/utils/formatters.ts";
 
 type ListingCardProps = {
-    listing: JobListingValues
+    listing: Pick<JobListingValues, "title" | "companyName" | "location" | "salary" | "type" | "experienceLevel" | "shortDescription" >
     header?: React.ReactNode
-    footerBtns: React.ReactNode
+    footerBtns?: React.ReactNode
     className?: string
 }
 
 
-const ListingCard = ({listing , header, footerBtns , className} : ListingCardProps) => {
+export const ListingCard = ({listing , header, footerBtns , className} : ListingCardProps) => {
     return (
         <Card className={className}>
             <style>{`
@@ -64,5 +64,3 @@ const ListingCard = ({listing , header, footerBtns , className} : ListingCardPro
         </Card>
     );
 };
-
-export default ListingCard;

@@ -40,7 +40,7 @@ const Navbar = () => {
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent align="end">
                                         <DropdownMenuItem asChild>
-                                            <Link to='/jobs'
+                                            <Link to='jobs/my-listings'
                                                   className="text-slate-900 cursor-pointer dark:text-slate-50 font-medium text-md hover:text-slate-800 dark:hover:text-slate-100">My
                                                 listings</Link>
                                         </DropdownMenuItem>
@@ -73,7 +73,7 @@ const Navbar = () => {
                             <DropdownMenuItem asChild>
                                 <Link to='/jobs'
                                       className="text-slate-900 cursor-pointer dark:text-slate-50 font-medium text-md hover:text-slate-800 dark:hover:text-slate-100">Job
-                                    board</Link>
+                                    Listings</Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator/>
                             {
@@ -85,7 +85,12 @@ const Navbar = () => {
                                         <DropdownMenuPortal>
                                             <DropdownMenuSubContent
                                             >
-                                                <DropdownMenuItem onClick={logout}>
+                                                <DropdownMenuItem asChild>
+                                                    <Link to='jobs/my-listings'
+                                                          className="text-slate-900 cursor-pointer dark:text-slate-50 font-medium text-md hover:text-slate-800 dark:hover:text-slate-100">My
+                                                        listings</Link>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuItem onClick={logout}>
                                                     <span>sign out</span>
                                                     <LogOut className="w-4 h-4 ml-2"/>
                                                 </DropdownMenuItem>
